@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model List<WareHouse>
+@{
+    ViewData["Title"] = "WareHouseList";
+    Layout = "~/Views/Shared/PanelLayout.cshtml";
+}
+
+<h2>WareHouseList</h2>
+
+<table class="table  table-bordered">
+    <tr>
+        <th>#</th>
+        <th>ReceiptNumber</th>
+        <th>WareHouseCode</th>
+        <th>Register Date</th>
+
+        <th>User</th>
+        <th>İncomePrice</th>
+        <th>OutPrice</th>
+       
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.WareHouseID</th>
+            <th>@item.ReceiptNumber</th>
+            <th>@item.WareHouseCode</th>
+            <th>@item.Registerdate</th>
+            <th>@item.User</th>
+            <th>@item.İncomePrice</th>
+            <th>@item.OutPrice</th>
+
+
+        </tr>
+    }
+</table>
+<a href="/Admin/WareHouseAdd" class="btn btn-primary">Yeni WareHouse Oluştur</a>
+

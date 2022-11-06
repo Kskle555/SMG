@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<Stock>
+@{
+    ViewData["Title"] = "StockList";
+    Layout = "~/Views/Shared/PanelLayout.cshtml";
+}
+
+<h2>StockList</h2>
+
+<table class="table  table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Stock Name</th>
+        <th>Description</th>
+        <th>Register Date</th>
+
+        <th>Price</th>
+        <th>KDV</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.StockID</th>
+            <th>@item.StockName</th>
+            <th>@item.Description</th>
+            <th>@item.Registerdate</th>
+            <th>@item.Price</th>
+            <th>@item.KDV</th>
+           
+            <td><a href="/Admin/DeleteBlog/@item.StockID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/StockEdit/@item.StockID" class="btn btn-warning">Düzenle</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Admin/StockAdd" class="btn btn-primary">Yeni Stok Oluştur</a>

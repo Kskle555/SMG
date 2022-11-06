@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.WareHouse
+@{
+    ViewData["Title"] = "WareHouseAdd";
+    Layout = "~/Views/Shared/PanelLayout.cshtml";
+}
+
+<h2>WareHouseAdd</h2>
+@using (Html.BeginForm("WareHouseAdd", "Admin", FormMethod.Post))
+{
+    @Html.Label("Receipt Number")
+    @Html.TextBoxFor(x => x.ReceiptNumber, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ReceiptNumber)
+    <br />
+    <br />
+    @Html.Label("WareHouseCode")
+    @Html.TextBoxFor(x => x.WareHouseCode, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WareHouseCode)
+    <br />
+    <br />
+    @Html.Label("İncome Price")
+    @Html.TextBoxFor(x => x.İncomePrice, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.İncomePrice)
+    <br />
+    <br />
+    @Html.Label("Out Price")
+    @Html.TextBoxFor(x => x.OutPrice, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OutPrice)
+    <br />
+    <br />
+    @Html.Label("User")
+    @Html.TextBoxFor(x => x.User, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-info" type="submit">Kaydet</button>
+}
+
